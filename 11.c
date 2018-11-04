@@ -36,7 +36,7 @@ void main()
 					       		r=del(&cq);
 					       		printf("The item deleted is %d\n",r);
 					       		}
-					       		return;
+					       		break;
 					    case 3:printf("Quitting operation queue\n");
 					           break;
 					    default:printf("Invalid choice\n");
