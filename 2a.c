@@ -33,7 +33,7 @@ for(i=0;i<m;i++)
 {
 for(j=0;j<n;j++)
 {
-scanf("%d", A[i]+j);
+scanf("%d", *(A+i)+j);
 }
 }
 printf("Enter the second matrix elements\n");
@@ -41,7 +41,7 @@ for(i=0;i<p;i++)
 {
 for(j=0;j<q;j++)
 {
-scanf("%d", B[i]+j);
+scanf("%d", *(B+i)+j);
 }
 }
 printf("The first matrix elements\n");
@@ -49,7 +49,7 @@ for(i=0;i<m;i++)
 {
 for(j=0;j<n;j++)
 {
-printf("%d\t", *A[i]+j);
+printf("%d\t", *(*(A+i)+j));
 }
 printf("\n");
 }
@@ -58,7 +58,7 @@ for(i=0;i<p;i++)
 {
 for(j=0;j<q;j++)
 {
-printf("%d\t", *B[i]+j);
+printf("%d\t", *(*(B+i)+j));
 }
 printf("\n");
 }
@@ -66,10 +66,10 @@ for(i=0;i<m;i++)
 {
     for(j=0;j<q;j++)
     {
-    *(C[i]+j)=0;
+    *(*(C+i)+j)=0;
     for(k=0;k<n;k++)
     {
-        *(C[i]+j) += (*A[i]+k) * (*B[k]+j);
+        *(*(C+i)+j) += (*(*(A+i)+k) * *(*(B+k)+j));
     }
     }
 }
@@ -78,7 +78,7 @@ for(i=0;i<m;i++)
 {
 for(j=0;j<q;j++)
 {
-printf("%d\t", (*C[i]+j));
+printf("%d\t", *(*(C+i)+j));
 }
 printf("\n");
 }
