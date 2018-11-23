@@ -1,7 +1,3 @@
-/*1.b. Find the following for the matrix use pointer concept of 2D array.
-1. Sum of principle diagonal elements.
-2. Sum of secondary diagonal elements
-3. Sum of all elements. */
 #include<stdio.h>
 #include<malloc.h>
 
@@ -10,7 +6,6 @@ int main()
     int (*p)[10];
     int i,j,m,n;
     int psum=0,ssum=0,tsum=0;
-    printf("1.b. Find the following for the matrix use pointer concept of 2D array.\n1. Sum of principle diagonal elements.\n2. Sum of secondary diagonal elements\n3. Sum of all elements. ");
     printf("\n\nEnter the order of the matrix.\n");
     scanf("%d%d",&m,&n);
     if(m!=n)
@@ -32,7 +27,7 @@ int main()
             scanf("%d",*(p+i)+j);
         }
     }
-    /*For printing matrix.*/
+    
     printf("The matrix is:\n");
      for(i=0;i<m;i++)
     {
@@ -42,7 +37,7 @@ int main()
         }
         printf("\n");
     }
-    /*For principle diagonal matrix.*/
+    
     for(i=0;i<m;i++)
     {
         for(j=0;j<n;j++)
@@ -53,12 +48,12 @@ int main()
             }
         }
     }
-     /*For secondary diagonal matrix.*/
+   
      for(i=0,j=n-1;i<m&&j>=0;i++,j--)
      {
          ssum= ssum+*(*(p+i)+j);
      }
-      /*For total sum matrix.*/
+      
      for(i=0;i<m;i++)
      {
         for(j=0;j<n;j++)
@@ -69,6 +64,4 @@ int main()
      printf("\nThe sum of principle diagonal elements =%d\n",psum);
      printf("The sum of secondary diagonal elements =%d\n",ssum);
      printf("The sum of total elements of the matrix =%d\n",tsum);
-
-
 }
