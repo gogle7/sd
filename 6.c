@@ -25,8 +25,8 @@ void push(struct stack *ps,struct book bk1)
 	{
 		++(ps->top);
 		strcpy(ps->bk[ps->top].name,bk1.name);
-		bk1.isbn=ps->bk[ps->top].isbn;
-		bk1.price=ps->bk[ps->top].price;
+		ps->bk[ps->top].isbn=bk1.isbn;
+		ps->bk[ps->top].price=bk1.price;
 	}
 }
 struct book pop(struct stack *ps)
@@ -60,7 +60,7 @@ int main()
 				{
 					bk2=pop(&s);
 					printf("Followings are popped out from Stack.\n");
-					printf("\nBook Name:%s\t\nISBN:%d\t\nPrice:%.2f\t\n\n",bk1.name,bk1.isbn,bk1.price);
+					printf("\nBook Name:%s\t\nISBN:%d\t\nPrice:%.2f\t\n\n",bk2.name,bk2.isbn,bk2.price);
 				}
 				break;
 			case 3:if(s.top==-1)
@@ -69,7 +69,7 @@ int main()
 				{
 					printf("Stack contents are:\n");
 					for(i=s.top;i>=0;i--)
-						printf("\nBook Name:%s\t\nISBN:%d\t\nPrice:%.2f\t\n\n",bk1.name,bk1.isbn,bk1.price);
+						printf("\nBook Name:%s\t\nISBN:%d\t\nPrice:%.2f\t\n\n",s.bk[i].name,s.bk[i].isbn,s.bk[i].price);
 				}
 				break;
 			case 4: printf("Exiting from the program.\n");
