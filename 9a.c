@@ -20,28 +20,11 @@ int main()
     scanf("%d",&n);
     a=(int *)malloc(n*sizeof(int));
     printf("Enter the numbers.\n");
-    again:
     for(i=0;i<n;i++)
     {
-        //printf("Enter the %d  number.\n",i+1);
         scanf("%d",a+i);
     }
-    for(i=0;i<n-1;i++)
-    {
-        if(a[i]<a[i+1])
-        {
-           p++;
-        }
-    }
-    if(p==n-1)
-    {
-        printf("it is sorted.you may proceed\n");
-    }
-    else
-    {
-        printf("Either the element is repeated or It is not sorted.\n");
-        goto again;
-    }
+    
     printf("Enter the key elements.\n");
     scanf("%d",&key);
     low=0;
