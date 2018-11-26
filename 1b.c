@@ -13,7 +13,7 @@ int main()
         printf("The order of the matrix is not same. So, it is not a square matrix.\n");
         return 0;
     }
-    p=(int*)malloc(m*n*sizeof(int));
+    p=malloc(m*n*sizeof(int));
     if(p==NULL)
     {
         printf("Allocation Failed\n");
